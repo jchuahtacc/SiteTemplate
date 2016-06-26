@@ -1,5 +1,5 @@
 define(['jquery',
-        'fbaccountdropdown',
+      // 'fbaccountdropdown',
         'bootstrapgrowl',
         'firebase', 'bootstrap'], function($) {
   function App() {
@@ -11,7 +11,7 @@ define(['jquery',
   App.prototype = {
       constructor: App,
       initialize: function() {
-          console.log("Hello, console!");
+        console.log("Hello, console!");
 
         // this.fbaccountdropdown = new FBAccountDropdown(this.firebase);
       }
