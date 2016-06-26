@@ -1,22 +1,32 @@
-# Bootstrap/RequireJS Site Template
+# Bootstrap/Firebase Site Template
 
-This site template implements RequireJS and Bootstrap. It includes shims for
-[Firebase](https://www.firebase.com/docs/web/api/) and
-[Bootstrap Growl](https://github.com/ifightcrime/bootstrap-growl). In addition,
-it includes an example Bootstrap plugin for a Firebase account sign-in and
-management navbar list item.
+This site template implements Bootstrap and Firebase.
 
 ### Usage
 
-[`./js/app.js`](./js/app.js) is the main script for this template. `initialize`
- in the `App.prototype` is the functionally similar to jQuery's `$(document).ready()`.
-Additional plugins and Javascript files can be added to `main.js`.
+[`./public/js/site.js`](./public/js/site.js) is the main script for this template. Any Javascript
+that must wait for the UI to finish loading can go in `$(document).ready()`.
 
 ### Firebase
 
-This project includes a Firebase login Bootstrap interface plugin. To add Firebase login functionality:
+This project includes a Firebase boilerplate and helper functions.
 
 - Create a [Firebase](https://firebase.google.com/) project
-- Enable E-mail/Password authentication on your Firebase project
-- Uncomment the code pertaining to Firebase and `fbaccountdropdown` in [`./js/app.js`](./js/app.js)
-- Replace the Firebase URL parameter `https://my.firebaseio.com` with your project URL
+- Select _Auth_ in the left panel, then select the _Sign-In Method_ pane under the _Authentication_ panel. Enable Google Sign-in.
+- Click the _Web Setup_ link in the upper left of the page.
+  This will have your `config` variable, including API keys and URLs.
+  Replace the `config` in ['./public/js/site.js'](./public/js/site.js) with your `config`
+
+### Firebase Click
+
+You can use the Firebase CLI to test this page and deploy it to Google's
+Firebase hosting.
+
+- Install [NodeJS](http://nodejs.org).
+- From a terminal, install the Firebase CLI with `npm install -g firebase-tools`
+- From within the [`./public`](./public) directory, run `firebase serve` to get host
+  the page locally at [`http://localhost:5000`](http://localhost:5000)
+- To deploy the site to Firebase's free hosting, go to the root of this project
+  in the terminal and run `firebase init`. Select your database project, leave
+  the rest of the settings at defaults (just hit enter a whole bunch) and then
+  type `firbase deploy`.
